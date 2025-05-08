@@ -1,0 +1,49 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package FurniturePackage;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class AboutUs extends Application {
+   public AboutUs() {
+   }
+
+   public void start(Stage primaryStage) {
+      VBox mainContainer = new VBox(20.0);
+      mainContainer.setAlignment(Pos.CENTER);
+      mainContainer.setPadding(new Insets(25.0));
+      Label aboutTitle = new Label("ABOUT US");
+      aboutTitle.setId("about-title");
+      Label visionTitle = new Label("Our Vision");
+      visionTitle.setId("vision-title");
+      Label visionText = new Label("Our vision is to redefine the essence of quality living spaces worldwide,\nbecoming the premier destination for those seeking unparalleled craftsmanship in furniture. \nWe aim to inspire living spaces with our creations, ensuring each piece resonates with the elegance, \nfunctionality, and sustainability that our brand stands for. As we journey towards this horizon, \nwe are committed to pushing the boundaries of design, quality, \nand innovation to enrich homes and lives across the globe.");
+      visionText.setWrapText(true);
+      visionText.setId("vision-text");
+      Label missionTitle = new Label("Our Mission");
+      missionTitle.setId("mission-title");
+      Label missionText = new Label("Our mission embodies the heart of craftsmanship, innovation, and sustainability. \nAt the core of our work is a deep commitment to creating furniture that stands the test of time, \nboth in design and durability. We pledge to craft pieces that not only enhance the beauty of your home but \nalso uphold our responsibility to the environment. Through sustainable practices, meticulous design, and the finest materials, \nwe strive to bring you furniture that celebrates quality living, comfort, and the joy of home. \nIt is our mission to ensure that every creation from our workshop contributes to a more sustainable and beautiful world, \nmaking quality furniture accessible and cherished by all.");
+      missionText.setWrapText(true);
+      missionText.setId("mission-text");
+      Label contactTitle = new Label("Contact Us");
+      contactTitle.setId("contact-title");
+      Label contactInfo = new Label("Name: Furniture Hub\nPhone: +94 71 646 8923\nEmail: FurnitureHub@gmail.com.");
+      contactInfo.setId("contact-info");
+      contactInfo.setWrapText(true);
+      mainContainer.getChildren().addAll(new Node[]{aboutTitle, visionTitle, visionText, missionTitle, missionText, contactTitle, contactInfo});
+      Scene scene = new Scene(mainContainer, 1550.0, 800.0);
+      scene.getStylesheets().add(this.getClass().getResource("dashboard.css").toExternalForm());
+      primaryStage.setTitle("About Us");
+      primaryStage.setScene(scene);
+      primaryStage.show();
+   }
+
+   public static void main(String[] args) {
+      launch(args);
+   }
+}
